@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Space+Mono">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script src = "JQueryNew/jquery-3.6.0.min.js"></script>
+  
+  <title>Frontend Mentor | Grade point Avearge app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+<section id ="container">
+
+    <div class="page_title">
+    <p>GRADE POINT AVERAGE</p>
+    <p>(GPA)</p>
+  </div>
+  <div class="body_container row">
+  <div class="col">
+  <div class = "course" id="after">
+    <p>Enter Total number of Courses</p>
+    <input type="text" placeholder="0" id="input_course" name="No_of_Courses" />
+    <div class="input_error"><p>Input is only limited to 11 courses</p></div>
+  </div>
+
+  <!------------------------input tables according to the total number of courses ---------------------->
+  <!------For one------>
+    <div class=" display_table border_corner" id="after_2">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id="unit_value"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect">
+          <option value="Null">Grade</option>
+          <option value="5" id="gr5">A</option>
+          <option value="4" id="gr4">B</option>
+          <option value="3" id="gr3">C</option>
+          <option value="2" id="gr2">D</option>
+          <option value="0" id="gr0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_1">
+      </div>
+
+    </div>
+
+    <!------For two------>
+    <div class="display_two border_corner" id="tab_2">
+        <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="fis_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect1">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "sec_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect2">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_2">
+      </div>
+
+    </div>
+      <!------For Three------>
+    <div class="display_three border_corner" id="tab_3">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="trd_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect3">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "fth_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect4">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "fith_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect5">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_3">
+      </div>
+
+      
+
+    </div>
+
+       <!------For Four------>
+    <div class="display_four border_corner" id="tab_4">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="sith_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect6">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "sevth_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect7">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "eith_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect8">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "nith_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect9">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_4">
+      </div>
+
+    </div>
+
+           <!------For Five------>
+    <div class="display_fiv border_corner" id="tab_5">
+     <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t10_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect10">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t11_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect11">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t12_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect12">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t13_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect13">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t14_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect14">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_5">
+      </div>
+
+    </div>
+
+               <!------For Six------>
+    <div class="display_six border_corner" id="tab_6">
+     <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t15_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect15">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t16_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect16">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t17_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect17">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t18_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect18">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t19_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect19">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t20_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect20">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_6">
+      </div>
+
+    </div>
+                 <!------For Seven------>
+    <div class="display_sev border_corner" id="tab_7">
+     <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t21_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect21">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t22_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect22">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t23_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect23">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t24_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect24">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t25_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect25">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t26_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect26">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t27_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect27">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_7">
+      </div>
+
+    </div>
+                   <!------For Eight------>
+    <div class="display_eig border_corner" id="tab_8">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t28_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect28">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t29_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect29">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t30_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect30">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t31_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect31">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t32_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect32">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t33_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect33">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t34_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect34">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t35_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect35">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_8">
+      </div>
+
+    
+
+    </div>
+
+                       <!------For Nine------>
+    <div class="display_nin border_corner" id="tab_9">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t36_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect36">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t37_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect37">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t38_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect38">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t39_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect39">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t40_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect40">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t41_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect41">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t42_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect42">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t43_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect43">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t44_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect44">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_9">
+      </div>
+
+
+    </div>
+                           <!------For Ten------>
+    <div class="display_ten border_corner" id="tab_10">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t45_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect45">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t46_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect46">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t47_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect47">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t48_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect48">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t49_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect49">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t50_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect50">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t51_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect51">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t52_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect52">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t53_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect53">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+          <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t54_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect54">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_10">
+      </div>
+
+
+    </div>
+
+                               <!------For Eleven------>
+    <div class="display_Ele border_corner" id="tab_11">
+      <div class="inner_cont row">
+         <div class="col-para col_tab">
+        <p>Unit</p>
+      </div>
+      <div class="col-para col_tab">
+        <p>Grade</p>
+      </div>
+      </div>
+     <div class="row">
+        <div class = "col_1 unit_input">
+        <input type="text" placeholder="" id ="t55_input" name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect55">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+       <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t56_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect56">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t57_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect57">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t58_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect58">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+      <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t59_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect59">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t60_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect60">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t61_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect61">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t62_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect62">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t63_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect63">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+          <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t64_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect64">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+          <div class="row">
+        <div class = "col_1 unit_input move_down">
+        <input type="text" placeholder="" id = "t65_input"  name="Unit" />
+      </div>
+       <div class="col_2 custom-select">
+        <select id="mySelect65">
+          <option value="">Grade</option>
+          <option value="5">A</option>
+          <option value="4">B</option>
+          <option value="3">C</option>
+          <option value="2">D</option>
+          <option value="0">F</option>
+        </select>
+      </div>
+     </div>
+     
+     <div class="error-table" id="error-show"><p>Incomplete Table</p></div>
+      <div class="cal_btn">
+       <input type="button" value="CALCULATE" id = "gpa_11">
+      </div>
+
+
+    </div>
+
+
+                                   <!------For Tweleve------>
+
+  </div>
+  
+
+  <!---------------Display GPA------------------------------>
+
+  <div class="col result_display">
+    <div class="gpa_para">
+      <p>GPA</p>
+    </div>
+
+    <div class="result_column">
+      <div class="dormant_value" id="hide_zero">0.00</div>
+     <div id="result_display"></div> 
+    </div>
+
+    <div class="reset">
+      <input type="button" class="del" id="delete" onclick="clr()" value="RESET">
+    </div>
+
+  </div>
+
+  </div>
+
+  
+  
+</section>
+  
+  <div class="attribution">
+    Coded by <a href="#">Ugochukwu Peter Uche</a> .
+  </div>
+</body>
+<script src="script.js"></script>
+
+<script>
+  var x, i, j, l, ll, selElmnt, a, b, c;
+/* Look for any elements with the class "custom-select": */
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /* For each element, create a new DIV that will act as the selected item: */
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /* For each element, create a new DIV that will contain the option list: */
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /* For each option in the original select element,
+    create a new DIV that will act as an option item: */
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item: */
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+    /* When the select box is clicked, close any other select boxes,
+    and open/close the current select box: */
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelect(elmnt) {
+  /* A function that will close all select boxes in the document,
+  except the current select box: */
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+
+/* If the user clicks anywhere outside the select box,
+then close all select boxes: */
+document.addEventListener("click", closeAllSelect); 
+</script>
+
+</html>
